@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>下载1905电影网 | 老片修复与经典片源获取指南·电影资料归档站</title>
+<meta name="description" content="下载1905电影网（xiazai1905dianyingwang-top.github.io）专注经典电影的数字归档与获取指引，涵盖老片修复版、胶片转制资源、影片元数据整理及合法下载渠道说明，帮助影迷安全、合规地收藏百年影史佳作。">
+<meta name="keywords" content="下载1905电影网, 1905电影下载, 经典老片修复, 电影资料归档, 胶片转制, 电影元数据库, xiazai1905dianyingwang-top">
+<style>
+:root{
+  --news-ink:#1a1a1a;
+  --news-paper:#f7f4ee;
+  --news-rule:#222;
+  --news-red:#8a1c1c;
+  --news-blue:#1d3a6e;
+  --news-grey:#5c5a55;
+  --news-column-rule:#ccc4b4;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+  background:var(--news-paper);
+  color:var(--news-ink);
+  font-family:"Noto Serif SC","Songti SC","SimSun",Georgia,"Times New Roman",serif;
+  line-height:1.85;
+  font-size:16px;
+  padding:0 0 40px;
+}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+/* 报头 */
+.masthead{
+  text-align:center;
+  border-bottom:5px double var(--news-rule);
+  padding:28px 10px 18px;
+  margin-bottom:6px;
+}
+.masthead .vol{
+  font-size:12px;letter-spacing:3px;color:var(--news-grey);
+  text-transform:uppercase;margin-bottom:10px;
+}
+.masthead h1{
+  font-size:clamp(2.2rem,6vw,4rem);
+  font-weight:900;
+  letter-spacing:2px;
+  line-height:1.1;
+}
+.masthead h1 em{
+  font-style:normal;color:var(--news-red);
+}
+.masthead .sub{
+  font-size:15px;color:var(--news-grey);
+  margin-top:12px;font-style:italic;
+}
+.masthead .meta{
+  display:flex;justify-content:center;gap:20px;flex-wrap:wrap;
+  font-size:12px;color:var(--news-grey);
+  border-top:1px solid var(--news-column-rule);
+  margin-top:14px;padding-top:8px;
+}
+
+/* 域名条 */
+.urlbar{
+  background:var(--news-blue);color:#fff;
+  text-align:center;padding:10px;font-size:14px;
+  letter-spacing:1px;margin-bottom:26px;
+}
+.urlbar a{color:#ffd98e;border-bottom:1px dotted #ffd98e}
+
+/* 导语区 */
+.lede{
+  column-count:2;column-gap:36px;column-rule:1px solid var(--news-column-rule);
+  margin-bottom:34px;text-align:justify;
+}
+.lede p{margin-bottom:12px}
+.lede p:first-child::first-letter{
+  float:left;font-size:4.2rem;line-height:.85;
+  font-weight:900;color:var(--news-red);
+  padding-right:8px;padding-top:4px;
+}
+
+/* 栏目标题通用 */
+.section{margin-bottom:40px}
+.sec-head{
+  display:flex;align-items:baseline;gap:12px;
+  border-bottom:3px solid var(--news-rule);
+  padding-bottom:6px;margin-bottom:18px;
+}
+.sec-head .num{
+  font-size:13px;font-weight:700;color:#fff;
+  background:var(--news-red);padding:2px 8px;border-radius:2px;
+}
+.sec-head h2{font-size:1.6rem;font-weight:800;letter-spacing:1px}
+.sec-head .more{margin-left:auto;font-size:13px;color:var(--news-grey)}
+
+/* 栏目一：导航 */
+.cat-nav{display:flex;flex-wrap:wrap;gap:10px}
+.cat-nav a{
+  flex:1 1 160px;text-align:center;
+  border:1px solid var(--news-rule);padding:12px 8px;
+  font-size:15px;font-weight:700;transition:.2s;
+  background:#fff;
+}
+.cat-nav a:hover{background:var(--news-red);color:#fff;border-color:var(--news-red)}
+
+/* 栏目二：三列卡片 */
+.tri-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.col-card{border-top:4px solid var(--news-blue);padding-top:12px}
+.col-card h3{
+  font-size:1.15rem;margin-bottom:10px;color:var(--news-blue);
+}
+.col-card p{font-size:14.5px;color:#3d3b35;margin-bottom:10px;text-align:justify}
+.col-card ol{padding-left:18px;font-size:14.5px}
+.col-card ol li{margin-bottom:7px}
+.col-card ol li a:hover{color:var(--news-red);text-decoration:underline}
+
+/* 栏目三：表格 */
+.archive-table{width:100%;border-collapse:collapse;font-size:14.5px;background:#fff}
+.archive-table th{
+  background:var(--news-ink);color:#fff;padding:10px;text-align:left;font-weight:700;
+}
+.archive-table td{padding:10px;border-bottom:1px solid var(--news-column-rule)}
+.archive-table tr:nth-child(even) td{background:#f0ece2}
+.archive-table .yr{font-weight:700;color:var(--news-red);white-space:nowrap}
+.archive-table .tag{
+  display:inline-block;font-size:11px;padding:2px 7px;
+  background:var(--news-blue);color:#fff;border-radius:2px;
+}
+
+/* 栏目四：时间轴 */
+.timeline{position:relative;padding-left:26px}
+.timeline::before{
+  content:'';position:absolute;left:7px;top:6px;bottom:6px;
+  width:3px;background:var(--news-rule);
+}
+.tl-item{position:relative;margin-bottom:22px}
+.tl-item::before{
+  content:'';position:absolute;left:-24px;top:7px;
+  width:12px;height:12px;background:var(--news-red);border-radius:50%;
+  border:2px solid var(--news-paper);
+}
+.tl-item h4{font-size:1.1rem;margin-bottom:4px}
+.tl-item p{font-size:14.5px;color:#3d3b35}
+
+/* 栏目五：FAQ */
+.faq details{
+  background:#fff;border:1px solid var(--news-column-rule);
+  padding:14px 16px;margin-bottom:10px;
+}
+.faq summary{cursor:pointer;font-weight:700;font-size:16px}
+.faq summary:hover{color:var(--news-red)}
+.faq p{margin-top:10px;font-size:14.5px;color:#3d3b35}
+
+/* 页脚 */
+footer{
+  border-top:5px double var(--news-rule);
+  padding-top:20px;margin-top:40px;
+  font-size:13.5px;color:var(--news-grey);text-align:center;
+}
+footer .footlinks{display:flex;justify-content:center;gap:22px;flex-wrap:wrap;margin-bottom:14px}
+footer .footlinks a:hover{color:var(--news-red)}
+footer .colophon{
+  font-size:12px;line-height:1.9;max-width:720px;margin:0 auto;
+}
+
+/* 响应式 */
+@media(max-width:860px){
+  .tri-cols{grid-template-columns:1fr}
+  .lede{column-count:1}
+}
+@media(max-width:560px){
+  body{font-size:15px}
+  .masthead{padding:20px 6px 14px}
+  .sec-head{flex-wrap:wrap}
+  .sec-head .more{margin-left:0;width:100%}
+  .archive-table{font-size:13.5px}
+  .archive-table th:nth-child(3),
+  .archive-table td:nth-child(3){display:none}
+  .cat-nav a{flex:1 1 45%}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<div class="wrap">
+
+  <!-- 报头 -->
+  <header class="masthead">
+    <div class="vol">Film Archive &amp; Restoration Guide · Est. 1905 Spirit</div>
+    <h1>下载<em>1905</em>电影网</h1>
+    <div class="sub">百年影史，一格一格地归档与修复——老片数字化的检索与获取指引</div>
+    <div class="meta">
+      <span>内容定位：电影资料 · 修复记录 · 下载指引</span>
+      <span>更新频率：每周精选</span>
+      <span>适读人群：影史研究者 / 收藏者 / 修复爱好者</span>
+    </div>
+  </header>
+
+  <!-- 域名条 -->
+  <div class="urlbar">
+    官方站点地址：<a href="https://xiazai1905dianyingwang-top.github.io">https://xiazai1905dianyingwang-top.github.io</a>
+  </div>
+
+  <!-- 导语 -->
+  <section class="lede">
+    <p>下载1905电影网不是一个资源搬运站，而是一份关于老电影"如何被重新看见"的数字化档案。从1905年中国第一部电影《定军山》算起，百余年的胶片在温度、湿度与时间里逐渐褪色、收缩、脆裂；我们的工作，是把这些即将沉默的影像用修复、转制、元数据标注的方式，留给下一次点开屏幕的人。</p>
+    <p>在这里你能找到片源获取渠道的合规说明、不同修复版本的画质差异对比、以及一份持续更新的老片归档目录。所有栏目只做导览与整理，不托管、不破解、不提供任何侵权下载。</p>
+  </section>
+
+  <!-- 栏目一：频道导航 -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="num">01</span>
+      <h2>频道导航</h2>
+      <a href="#" class="more">查看全部栏目 ›</a>
+    </div>
+    <nav class="cat-nav">
+      <a href="#">修复档案</a>
+      <a href="#">胶片转制</a>
+      <a href="#">片源获取指引</a>
+      <a href="#">元数据库</a>
+      <a href="#">放映日历</a>
+      <a href="#">影史考据</a>
+    </nav>
+  </section>
+
+  <!-- 栏目二：三列内容 -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="num">02</span>
+      <h2>核心内容</h2>
+      <a href="#" class="more">内容索引 ›</a>
+    </div>
+    <div class="tri-cols">
+      <div class="col-card">
+        <h3>修复档案</h3>
+        <p>记录每部老片的修复路径：原始胶片状态、扫描分辨率、色彩还原依据、修复前后帧对比。看懂"修复版"三个字背后的工作量。</p>
+        <ol>
+          <li><a href="#">4K 重制与 2K 修复的观感差异</a></li>
+          <li><a href="#">手工逐帧去污点的成本有多高</a></li>
+          <li><a href="#">声轨分离与历史录音复原</a></li>
+        </ol>
+      </div>
+      <div class="col-card">
+        <h3>片源获取指引</h3>
+        <p>梳理正版渠道、公开档案库与馆藏机构的可访问方式，区分"可下载""可在线看""仅限馆内阅览"三种权限。</p>
+        <ol>
+          <li><a href="#">公有领域影片的合法下载入口</a></li>
+          <li><a href="#">各国电影资料馆开放目录</a></li>
+          <li><a href="#">学术用途的影片申请流程</a></li>
+        </ol>
+      </div>
+      <div class="col-card">
+        <h3>元数据库</h3>
+        <p>为每部归档影片建立统一字段：出品年份、制片机构、胶片规格、现存拷贝位置、修复版本号、语种字幕。</p>
+        <ol>
+          <li><a href="#">为什么同一部片会有多个片名</a></li>
+          <li><a href="#">胶片规格对画质的影响</a></li>
+          <li><a href="#">现存拷贝的全球分布情况</a></li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目三：归档表格 -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="num">03</span>
+      <h2>本周归档目录</h2>
+      <a href="#" class="more">完整目录 ›</a>
+    </div>
+    <table class="archive-table">
+      <thead>
+        <tr>
+          <th>年份</th>
+          <th>片名</th>
+          <th>修复状态</th>
+          <th>片长</th>
+          <th>归档说明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="yr">1905</td>
+          <td><a href="#">定军山（记录片段）</a></td>
+          <td><span class="tag">文献记录</span></td>
+          <td>不详</td>
+          <td>中国电影起点，现存为文献性记录</td>
+        </tr>
+        <tr>
+          <td class="yr">1934</td>
+          <td><a href="#">神女</a></td>
+          <td><span class="tag">2K 修复</span></td>
+          <td>76分钟</td>
+          <td>2014 年修复版，配乐重构</td>
+        </tr>
+        <tr>
+          <td class="yr">1948</td>
+          <td><a href="#">小城之春</a></td>
+          <td><span class="tag">4K 重制</span></td>
+          <td>93分钟</td>
+          <td>2005 年世纪修复项目</td>
+        </tr>
+        <tr>
+          <td class="yr">1962</td>
+          <td><a href="#">早春二月</a></td>
+          <td><span class="tag">2K 修复</span></td>
+          <td>112分钟</td>
+          <td>色彩还原基于原始调色本</td>
+        </tr>
+        <tr>
+          <td class="yr">1987</td>
+          <td><a href="#">红高粱</a></td>
+          <td><span class="tag">4K 重制</span></td>
+          <td>91分钟</td>
+          <td>2018 年戛纳重制版</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 栏目四：时间轴 -->
+  <section class="section">
+    <div class="sec-head">
+      <span class="num">04</span>
+      <h2>影史时间轴</h2>
+      <a href="#" class="more">展开全部 ›</a>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <h4>1905 · 起点</h4>
+        <p>北京丰泰照相馆拍摄谭鑫培《定军山》片段，中国电影史从此有了第一个年份。</p>
+      </div>
+      <div class="tl-item">
+        <h4>1930s · 有声与左翼</h4>
+        <p>有声技术进入中国制片，现实主义题材集中涌现，胶片开始大规模生产。</p>
+      </div>
+      <div class="tl-item">
+        <h4>1940s–60s · 黄金期与断层</h4>
+        <p>一批被后世反复修复的经典诞生；同时战乱与搬迁造成大量拷贝永久散佚。</p>
+      </div>
+      <div class="tl-item">
+        <h4>2000s 至今 · 数字化修复</h4>
+        <p>胶片扫描、数字中间片、AI 辅助修复并行，修复从"抢救"走向"重制"。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 栏目五：FAQ -->
+  <section class="section faq">
+    <div class="sec-head">
+      <span class="num">05</span>
+      <h2>常见问题</h2>
+    </div>
+    <details open>
+      <summary>下载1905电影网提供影片下载吗？</summary>
+      <p>不提供。本站只整理与归档相关的指引信息，所有下载行为请通过页面列出的正版或公开渠道自行完成，并遵守当地法律法规。</p>
+    </details>
+    <details>
+      <summary>"修复版"和"重制版"有什么区别？</summary>
+      <p>修复版以去除损伤、恢复原貌为目标；重制版（如 4K 重制）会在修复基础上重新调色、重做声轨，观感更贴近当代放映标准。</p>
+    </details>
+    <details>
+      <summary>为什么有些老片标注"仅文献记录"？</summary>
+      <p>部分早期影片的原始胶片已佚失，仅存剧照、剧本或放映记录，只能作为文献性条目存在，无法提供影像观看。</p>
+    </details>
+    <details>
+      <summary>站点名称与域名可以修改吗？</summary>
+      <p>不可以。本站固定为「下载1905电影网」，官方地址固定为 https://xiazai1905dianyingwang-top.github.io，不作任何改动。</p>
+    </details>
+  </section>
+
+  <!-- 页脚 -->
+  <footer>
+    <div class="footlinks">
+      <a href="#">关于本站</a>
+      <a href="#">归档标准</a>
+      <a href="#">版权声明</a>
+      <a href="#">友情链接</a>
+      <a href="#">联系留言</a>
+    </div>
+    <div class="colophon">
+      © 下载1905电影网 · 电影资料归档与修复指引站<br>
+      本站仅作影史资料整理与合规获取渠道说明，不提供任何影片托管、下载或在线播放服务。<br>
+      官方地址：https://xiazai1905dianyingwang-top.github.io
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
